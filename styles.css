@@ -30,6 +30,7 @@ h3 {
 .blue {
     color: rgb(41, 68, 82);
 }
+
 /*
 
 NAV BAR
@@ -61,6 +62,7 @@ NAV BAR
     font-weight: bold;
     font-size: 18px;
     color: black;
+    position: relative;
 }
 
 .nav__link--btn {
@@ -74,6 +76,31 @@ NAV BAR
 .nav__link--btn:hover {
     background-color: gray;
 }
+
+.link__hover-effect::after {
+    content: "";
+    height: 3px;
+    background-color: #242424;
+    width: 0;
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    transition: all 300ms ease;
+}
+
+.link__hover-effect:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.link__hover-effect--blue::after {
+    background-color: rgb(41, 68, 82, 0.5);
+}
+
+.link__hover-effect--blue{
+    color: rgb(41, 68, 82, 0.5);
+}
+
 
 /*
 
@@ -156,4 +183,116 @@ HEADEr
 
 .header__img {
     height: 100%;
+}
+
+/*
+
+OVERLAY
+
+*/
+
+.link__hover-effect--white {
+    color: white;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.link__hover-effect--white::after {
+    background-color: white;
+}
+
+.overlay {
+    height: 326px;
+    position: relative;
+}
+
+.overlay:after {
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(./Assets/movies__background.jpeg);;
+    z-index: -1;
+    filter: brightness(30%)   
+}
+
+.overlay__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.overlay__content--text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: 32px;
+    width: 100%;
+}
+
+.overlay__title {
+    color: white;
+    margin-bottom: 30px;
+    font-weight: 400;
+    letter-spacing: 2.5px;
+}
+
+.overlay__sub-title {
+    margin-bottom: 40px;
+}
+
+.overlay__input {
+    width: 100%;
+    max-width: 600px;
+    height: 60px;
+    border-radius: 50px;
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+.input__wrapper--overlay {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.fa-search__overlay {
+    position: absolute;
+    color: rgb(41, 68, 82);
+    right: 20px;
+    top: 14px;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.fa-search__overlay:hover {
+    color: gray;
+}
+
+/* 
+
+Search results
+
+*/
+
+#search {
+    padding: 32px 40px;
+}
+
+.search__filters {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search__text {
+    font-size: 28px;
+    font-weight: 700;
 }
