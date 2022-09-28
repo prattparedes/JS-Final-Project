@@ -290,9 +290,62 @@ Search results
 .search__filters {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 32px;
 }
 
 .search__text {
     font-size: 28px;
     font-weight: 700;
 }
+
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie__img--wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.movie__img {
+    border-radius: 16px;
+    width: 100%;
+    transition: filter 300ms ease;
+}
+
+.movie {
+    margin-bottom: 32px;
+    width: 30%;
+    position: relative;
+    overflow: hidden;
+}
+
+.movie__description {
+    position: absolute;
+    top: 100%;
+    left: 40%;
+    transform: translate(-40%, -50%);
+    color: white;
+    max-width: 250px;
+    opacity: 0;
+    transition: all 300ms ease;
+}
+
+.movie:hover .movie__img{
+    filter: brightness(30%);
+}
+
+.movie:hover .movie__description{
+    opacity: 1;
+    top: 50%;
+}
+
+.fa-star {
+    font-size: 16px;
+}
+
