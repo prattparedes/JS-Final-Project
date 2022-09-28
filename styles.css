@@ -11,11 +11,25 @@ a {
     text-decoration: none;
 }
 
+h1 {
+    font-size: 50px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+.click:active {
+    transform: scale(0.89);
+}
+
 #landing {
     height: 100vh;
 }
 
-
+.blue {
+    color: rgb(41, 68, 82);
+}
 /*
 
 NAV BAR
@@ -59,4 +73,87 @@ NAV BAR
 
 .nav__link--btn:hover {
     background-color: gray;
+}
+
+/*
+
+HEADEr
+
+*/
+
+.header__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: calc(100vh - 80px);
+    max-width: 730px;
+    margin: 0 auto;
+}
+
+.header__content--text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.header__title {
+    color: rgb(41, 68, 82);
+    margin-bottom: 30px;
+}
+
+.header__sub-title {
+    margin-bottom: 40px;
+}
+
+.input__wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__input,
+.header__btn {
+    border-radius: 16px;
+}
+
+
+.header__input {
+    padding: 0 15px 0 25px;
+    height: 60px;
+    font-size: 24px;
+    width: 80%;
+    border: 1px solid #242424;
+}
+
+.header__input:focus {
+    box-shadow: 0 0 10 1px rgb(41, 68, 82);
+}
+
+.header__btn {
+    width: 18%;
+    border: 0;
+    background-color: rgb(41, 68, 82);
+    box-shadow: 7px 7px 14px rgb(41 68 82 / 30%);
+    cursor: pointer;
+    transition: background-color 200ms ease, transform 300ms ease;
+}
+
+.btn__hover-effect:hover {
+    background-color: gray;
+}
+
+.fa-search {
+    color: white;
+    font-size: 32px;
+}
+
+.header__img--wrapper{
+    height: 50%;
+    padding-bottom: 20px;
+}
+
+
+.header__img {
+    height: 100%;
 }
