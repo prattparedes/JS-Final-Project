@@ -1,4 +1,5 @@
 const moviesEl = document.querySelector(".movies")
+const movieSearch = localStorage.getItem("search")
 
 function searchMovie(search) {
     renderMovies(search.target.value)
@@ -37,4 +38,4 @@ function movieHTML(movie) {
     </div>`
 }
 
-renderMovies('Fast')
+renderMovies(movieSearch)
