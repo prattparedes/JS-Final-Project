@@ -108,6 +108,10 @@ HEADER
 
 */
 
+header {
+    overflow: hidden;
+}
+
 .header__content {
     display: flex;
     flex-direction: column;
@@ -213,6 +217,36 @@ HEADER
     100%{
         opacity: 1;
         transform: scale(1);
+    }
+}
+
+.header__moving-animation--wrapper {
+    position: relative;
+    width: 100%;
+    bottom: 15%;
+}
+
+.movietape--animation {
+    position: absolute;
+    left: 0;
+    bottom: 12%;
+    width: 1200px;
+    animation: goLeft 1000ms infinite linear;
+    visibility: hidden;
+}
+
+.moving .movietape--animation {
+    visibility: visible;
+}
+
+
+@keyframes goLeft {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-120%);
     }
 }
 
