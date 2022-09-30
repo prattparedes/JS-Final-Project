@@ -7,6 +7,11 @@ function searchMovie(search) {
 }  
 
 async function filterMovies(filter) {
+    const moviesLoading = document.querySelector(".loading__wrapper")
+    moviesEl.innerHTML = ""
+    moviesLoading.classList += " loading__state"
+    
+
     const sortFilter = filter.target.value
     const searchItem = localStorage.getItem("secondSearch")
     const movies = await fetch(`https://www.omdbapi.com/?s=${searchItem}&apikey=7ca89627`)
@@ -24,7 +29,11 @@ async function filterMovies(filter) {
         resultArray.sort((a, b) => b.Year - a.Year)
     }
 
-    moviesEl.innerHTML = resultArray.map(movie => movieHTML(movie)).join('')
+    setTimeout(() => {
+        moviesLoading.classList.remove("loading__state")
+
+        moviesEl.innerHTML = resultArray.map(movie => movieHTML(movie)).join('')
+    }, 1000)
 }
 
 async function imdbData(ID) {
@@ -34,12 +43,21 @@ async function imdbData(ID) {
 }
 
 async function renderMovies(search) {
+    const moviesLoading = document.querySelector(".loading__wrapper")
+
+    moviesEl.innerHTML = ""
+    moviesLoading.classList += " loading__state"
+    
     const movies = await fetch(`https://www.omdbapi.com/?s=${search}&apikey=7ca89627`)
     const moviesData = await movies.json()
     const moviesData6 = moviesData.Search.slice(0, 6)
     const resultArray = await Promise.all(moviesData6.map(async (i) => await imdbData(i.imdbID)));
-    moviesEl.innerHTML = resultArray.map(movie => movieHTML(movie)).join('')
 
+    setTimeout(() => {
+        moviesLoading.classList.remove("loading__state")
+
+        moviesEl.innerHTML = resultArray.map(movie => movieHTML(movie)).join('')
+    }, 3000)
 }
 
 
@@ -61,4 +79,4 @@ function movieHTML(movie) {
     </div>`
 }
 
-renderMovies(movieSearch)
+// renderMovies(movieSearch)

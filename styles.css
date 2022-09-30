@@ -360,6 +360,80 @@ Search results
     font-size: 16px;
 }
 
+
+.movies__loading--spinner {
+    font-size: 80px;
+    color: rgb(41, 68, 82);
+    position: absolute;
+    left: 50%;
+    top: 70%;
+    animation: spinning 800ms linear infinite;
+    visibility: hidden;
+}
+
+.movies__loading--slide {
+    position: absolute;
+    top: 326px;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background-color: rgba(47, 34, 235, 0.5);
+    visibility: hidden;
+}
+
+.movies__loading--slide-move {
+    position: absolute;
+    top: 326px;
+    width: 250px;
+    height: 5px;
+    background-color: rgba(47, 34, 235);
+    animation: sliding 800ms infinite linear;
+    visibility: hidden;
+}
+
+@keyframes sliding {
+    0% {
+        left: 0;
+        right: 250px;
+    }
+
+    30% {
+        left: calc(100% - 250px);
+        right: 0;
+    }
+
+    50% {
+        left: 0;
+        right: 250px;
+    }
+
+    100% {
+        left: calc(100% - 250px);
+        right: 0;
+    }
+}
+
+.loading__state .movies__loading--spinner {
+    visibility: visible;
+}
+
+.loading__state .movies__loading--slide,
+.loading__state .movies__loading--slide-move {
+    visibility: visible;
+}
+
+@keyframes spinning {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+
 @media (max-width: 1020px) {
     
     .movie__description {
