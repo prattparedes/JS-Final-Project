@@ -231,7 +231,7 @@ header {
     left: 0;
     bottom: 12%;
     width: 1200px;
-    animation: goLeft 1000ms infinite linear;
+    animation: goLeft 1000ms linear;
     visibility: hidden;
 }
 
