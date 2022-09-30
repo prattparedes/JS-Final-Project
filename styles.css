@@ -287,6 +287,17 @@ Search results
     padding: 32px 40px;
 }
 
+#filter {
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+#filter:hover {
+    border: 1px solid;
+    border-color: rgb(41, 68, 82);
+    background-color: aliceblue;
+}
+
 .search__filters {
     display: flex;
     justify-content: space-between;
@@ -349,3 +360,17 @@ Search results
     font-size: 16px;
 }
 
+@media (max-width: 1020px) {
+    
+    .movie__description {
+        text-align: center;
+    }
+    
+    .movie__title {
+        font-size: 20px;
+    }
+    
+    .movie__synopsis {
+        display: none;
+    }
+}
