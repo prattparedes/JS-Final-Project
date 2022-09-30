@@ -1,5 +1,6 @@
 const moviesEl = document.querySelector(".movies")
 const movieSearch = localStorage.getItem("search")
+let isTrue = true
 
 function searchMovie(search) {
     renderMovies(search.target.value)
@@ -33,7 +34,7 @@ async function filterMovies(filter) {
         moviesLoading.classList.remove("loading__state")
 
         moviesEl.innerHTML = resultArray.map(movie => movieHTML(movie)).join('')
-    }, 1000)
+    },)
 }
 
 async function imdbData(ID) {
@@ -57,9 +58,8 @@ async function renderMovies(search) {
         moviesLoading.classList.remove("loading__state")
 
         moviesEl.innerHTML = resultArray.map(movie => movieHTML(movie)).join('')
-    }, 3000)
+    },)
 }
-
 
 function movieHTML(movie) {
     return `<div class="movie">
@@ -79,4 +79,8 @@ function movieHTML(movie) {
     </div>`
 }
 
-// renderMovies(movieSearch)
+function alertPopUp() {
+    alert('Function Not Implemented')
+}
+
+renderMovies(movieSearch)

@@ -104,7 +104,7 @@ NAV BAR
 
 /*
 
-HEADEr
+HEADER
 
 */
 
@@ -128,15 +128,30 @@ HEADEr
 .header__title {
     color: rgb(41, 68, 82);
     margin-bottom: 30px;
+    animation: fadeUp 1000ms 500ms backwards;
+}
+
+@keyframes fadeUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .header__sub-title {
     margin-bottom: 40px;
+    animation: fadeUp 1000ms 800ms backwards;
 }
 
 .input__wrapper {
     display: flex;
     justify-content: space-between;
+    animation: fadeUp 1000ms 1200ms backwards;
 }
 
 .header__input,
@@ -183,6 +198,22 @@ HEADEr
 
 .header__img {
     height: 100%;
+    animation: popUp 1000ms 600ms backwards;
+}
+
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    70% {
+        opacity: 0.9;
+        transform: scale(1.07);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 /*
